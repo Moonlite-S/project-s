@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkl0rpw03n73r"]
+
+[ext_resource type="Texture2D" uid="uid://bd5a3prqfjnbr" path="res://assets/score.png" id="1_swt7m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlste"]
+atlas = ExtResource("1_swt7m")
+region = Rect2(0, 0, 120, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ogf"]
+atlas = ExtResource("1_swt7m")
+region = Rect2(120, 0, 120, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q05q6"]
+atlas = ExtResource("1_swt7m")
+region = Rect2(240, 0, 120, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbyrr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlste")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64ogf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q05q6")
+}],
+"loop": true,
+"name": &"score",
+"speed": 5.0
+}]
+
+[node name="Score Text" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_fbyrr")
+animation = &"score"
+frame = 1
+frame_progress = 0.0170445

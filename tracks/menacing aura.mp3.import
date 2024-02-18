@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://j3ps7fvx05l8"
+path="res://.godot/imported/menacing aura.mp3-0771736784c3e23b2d8a96f756f61770.mp3str"
+
+[deps]
+
+source_file="res://tracks/menacing aura.mp3"
+dest_files=["res://.godot/imported/menacing aura.mp3-0771736784c3e23b2d8a96f756f61770.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

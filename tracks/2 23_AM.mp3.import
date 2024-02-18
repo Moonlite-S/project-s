@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wntqh4l1226m"
+path="res://.godot/imported/2 23_AM.mp3-b96242c3d9f36c6ac5b3446154e36bdd.mp3str"
+
+[deps]
+
+source_file="res://tracks/2 23_AM.mp3"
+dest_files=["res://.godot/imported/2 23_AM.mp3-b96242c3d9f36c6ac5b3446154e36bdd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=180.0
+beat_count=4
+bar_beats=4

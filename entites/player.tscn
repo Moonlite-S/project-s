@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://becu3oi3kt1d7"]
+
+[ext_resource type="Script" path="res://scripts/player.cs" id="1_8qbut"]
+[ext_resource type="SpriteFrames" uid="uid://dnx4nc5otatf8" path="res://player.tres" id="2_sgc6r"]
+[ext_resource type="PackedScene" uid="uid://cgg6rammgage1" path="res://entites/Revolver.tscn" id="3_vj7jl"]
+[ext_resource type="PackedScene" uid="uid://bgjv40j8gb607" path="res://entites/Railgun.tscn" id="5_jian7"]
+[ext_resource type="PackedScene" uid="uid://dg7x58bwtkkpr" path="res://entites/SubMachine.tscn" id="6_igpc2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x5kcl"]
+radius = 9.0
+height = 45.0
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_8qbut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 9)
+shape = SubResource("CapsuleShape2D_x5kcl")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = ExtResource("2_sgc6r")
+animation = &"run"
+
+[node name="Weapons" type="Node2D" parent="."]
+
+[node name="Revolver" parent="Weapons" instance=ExtResource("3_vj7jl")]
+visible = false
+position = Vector2(14, 4)
+scale = Vector2(0.43, 0.43)
+
+[node name="Railgun" parent="Weapons" instance=ExtResource("5_jian7")]
+visible = false
+position = Vector2(17, 0.5)
+scale = Vector2(0.239268, 0.239268)
+
+[node name="SubGun" parent="Weapons" instance=ExtResource("6_igpc2")]
+visible = false
+position = Vector2(16.5, 3)
+scale = Vector2(0.200923, 0.200923)
+
+[node name="Timer" type="Timer" parent="Weapons"]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="property_list_changed" from="CollisionShape2D" to="." method="OnCollisionChange"]
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="OnAnimFinished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="OnAnimFinished"]
+[connection signal="timeout" from="Weapons/Timer" to="." method="OnWeaponTimerTimeout"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg7x58bwtkkpr"]
+
+[ext_resource type="Texture2D" uid="uid://c4e05t2swpjku" path="res://assets/RxArt/submachinegunTex.png" id="1_oy4k7"]
+
+[node name="SubGun" type="Node2D"]
+
+[node name="SubMachine" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(40, -23)
+texture = ExtResource("1_oy4k7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5

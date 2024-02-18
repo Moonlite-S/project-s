@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vkgdv31018mj"
+path="res://.godot/imported/jam arcy yollie.wav-1ae1c6ffa89cacc8030c27170bc546ae.sample"
+
+[deps]
+
+source_file="res://tracks/jam arcy yollie.wav"
+dest_files=["res://.godot/imported/jam arcy yollie.wav-1ae1c6ffa89cacc8030c27170bc546ae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

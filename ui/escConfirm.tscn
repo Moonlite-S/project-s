@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnpymciccb6wr"]
+
+[ext_resource type="Script" path="res://scripts/escConfirm.cs" id="1_ua281"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_on3fv"]
+
+[node name="escConfirm" type="Control"]
+process_mode = 2
+top_level = true
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ua281")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.235294, 0.0862745, 0.0823529, 1)
+position = Vector2(575.75, 325.75)
+scale = Vector2(1152.5, 652.5)
+texture = SubResource("CanvasTexture_on3fv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 324.0
+offset_top = 89.0
+offset_right = 828.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "You wanna go back to the main menu?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 374.0
+offset_right = 493.0
+offset_bottom = 469.0
+text = "ye"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 374.0
+offset_right = 910.0
+offset_bottom = 469.0
+text = "no"
+
+[connection signal="pressed" from="Button" to="." method="OnYes"]
+[connection signal="pressed" from="Button2" to="." method="OnNo"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgjv40j8gb607"]
+
+[ext_resource type="Texture2D" uid="uid://da0pqdsk6pppx" path="res://assets/RxArt/railgunTex.png" id="1_f0wjv"]
+
+[node name="Railgun" type="Node2D"]
+
+[node name="Railgun" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(78, -27)
+texture = ExtResource("1_f0wjv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5

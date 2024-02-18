@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://ci328hcmbowub"]
+
+[ext_resource type="Script" path="res://scripts/tap_enemy.cs" id="1_8uqp7"]
+[ext_resource type="SpriteFrames" uid="uid://drt2ghm4tr81g" path="res://resources/tap_enemy.tres" id="3_1560g"]
+[ext_resource type="PackedScene" uid="uid://dkl0rpw03n73r" path="res://ui/ScoreText.tscn" id="3_k4oyh"]
+[ext_resource type="Texture2D" uid="uid://bd5a3prqfjnbr" path="res://assets/score.png" id="4_hfcnv"]
+[ext_resource type="Texture2D" uid="uid://bv4g7l0fwgww5" path="res://assets/miss.png" id="5_hwfct"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsbq5"]
+radius = 38.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6ylj"]
+atlas = ExtResource("4_hfcnv")
+region = Rect2(0, 0, 120, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfx51"]
+atlas = ExtResource("4_hfcnv")
+region = Rect2(120, 0, 120, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h27h"]
+atlas = ExtResource("4_hfcnv")
+region = Rect2(240, 0, 120, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dqe3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6ylj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfx51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h27h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hwfct")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="TapEnemy" type="Area2D"]
+script = ExtResource("1_8uqp7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lsbq5")
+
+[node name="Circle" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.933333, 0.34902, 0, 0.556863)
+self_modulate = Color(0.756863, 0, 0.384314, 1)
+texture_filter = 1
+scale = Vector2(6, 6)
+sprite_frames = ExtResource("3_1560g")
+animation = &"idle"
+offset = Vector2(0, -11.04)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -33)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_1560g")
+animation = &"idle"
+
+[node name="Score Text" parent="." instance=ExtResource("3_k4oyh")]
+visible = false
+sprite_frames = SubResource("SpriteFrames_5dqe3")
+animation = &"default"
+frame = 0
+frame_progress = 0.0
+
+[node name="Score Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="OnMouseEnter"]
+[connection signal="mouse_exited" from="." to="." method="OnMouseExit"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="OnAnimFinished"]

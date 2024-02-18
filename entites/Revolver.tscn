@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgg6rammgage1"]
+
+[ext_resource type="Texture2D" uid="uid://dfb66t3kytht" path="res://assets/RxArt/revolverTex.png" id="2_7pme2"]
+
+[node name="Revolver" type="Node2D"]
+position = Vector2(533, 277)
+scale = Vector2(0.215, 0.215)
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(46.5116, -18.6047)
+scale = Vector2(0.452767, 0.452767)
+texture = ExtResource("2_7pme2")

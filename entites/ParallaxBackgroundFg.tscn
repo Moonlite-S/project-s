@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5q275y38ewcd"]
+
+[ext_resource type="Script" path="res://scripts/parallaxBG.cs" id="1_2mprs"]
+[ext_resource type="Texture2D" uid="uid://iugmd5syuutg" path="res://assets/PixelPlatformerSet2v.1.1/Background/background6.png" id="2_axsis"]
+
+[node name="ParallaxBackgroundFG" type="ParallaxBackground"]
+layer = 0
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+z_as_relative = false
+motion_mirroring = Vector2(1000, 0)
+script = ExtResource("1_2mprs")
+Speed = 5.0
+
+[node name="Background6" type="Sprite2D" parent="ParallaxLayer6"]
+z_as_relative = false
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(581, 367)
+scale = Vector2(2.777, 2.80339)
+texture = ExtResource("2_axsis")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://3kpoov111tkt"]
+
+[ext_resource type="Script" path="res://scripts/BulletTrace.cs" id="1_a62a5"]
+
+[sub_resource type="Curve" id="Curve_kyuej"]
+_data = [Vector2(0.0427807, 0), 0.0, 0.0, 0, 0, Vector2(0.331658, 0.483516), 0.293563, 0.293563, 0, 0, Vector2(0.763819, 0.857143), -0.0419379, -0.0419379, 0, 0, Vector2(1, 0), -1.84236, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_58c05"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjqp2"]
+radius = 7.0
+height = 256.0
+
+[node name="Bullet Trace" type="Node2D"]
+scale = Vector2(0.155, 0.155)
+script = ExtResource("1_a62a5")
+
+[node name="Texture" type="Line2D" parent="."]
+position = Vector2(-20, -1)
+rotation = 0.756043
+points = PackedVector2Array(-251.049, 238.1, -55.2203, 53.2856, 9.32496, -7.62951, 14.5096, -12.3074, 17.4198, -15.0516, 25.4229, -22.5981, 29.7883, -26.7144, 33.426, -30.1446)
+width = 24.28
+width_curve = SubResource("Curve_kyuej")
+texture = SubResource("PlaceholderTexture2D_58c05")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-115, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mjqp2")

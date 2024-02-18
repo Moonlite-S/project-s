@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://blp3oqmsh12nn"]
+
+[ext_resource type="Script" path="res://scripts/Winner.cs" id="1_qa6jg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_foii2"]
+
+[node name="Winner" type="Control"]
+visible = false
+top_level = true
+z_index = 5
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qa6jg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.380392, 0.184314, 0.0705882, 1)
+scale = Vector2(1160, 656)
+texture = SubResource("PlaceholderTexture2D_foii2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.5
+offset_top = -245.0
+offset_right = 168.5
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You're winner!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 38.0
+offset_right = 77.0
+offset_bottom = 91.0
+text = "To main menu"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 125.0
+offset_right = 77.0
+offset_bottom = 178.0
+text = "Quit"
+
+[connection signal="pressed" from="Button" to="." method="OnMainMenuPressed"]
+[connection signal="pressed" from="Button2" to="." method="OnExitPressed"]

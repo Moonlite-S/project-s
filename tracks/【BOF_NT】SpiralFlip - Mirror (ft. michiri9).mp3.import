@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rqqipoch7f01"
+path="res://.godot/imported/【BOF_NT】SpiralFlip - Mirror (ft. michiri9).mp3-8fd933beca330e3d3c7e8a08b7e6d23a.mp3str"
+
+[deps]
+
+source_file="res://tracks/【BOF_NT】SpiralFlip - Mirror (ft. michiri9).mp3"
+dest_files=["res://.godot/imported/【BOF_NT】SpiralFlip - Mirror (ft. michiri9).mp3-8fd933beca330e3d3c7e8a08b7e6d23a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

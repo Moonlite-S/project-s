@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csi63vp7ed7s7"
+path="res://.godot/imported/【BOF_NT】SpiralFlip - Mirror (ft. michiri9).wav-691d363ff1fba92db519a4594cc53123.sample"
+
+[deps]
+
+source_file="res://tracks/【BOF_NT】SpiralFlip - Mirror (ft. michiri9).wav"
+dest_files=["res://.godot/imported/【BOF_NT】SpiralFlip - Mirror (ft. michiri9).wav-691d363ff1fba92db519a4594cc53123.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
